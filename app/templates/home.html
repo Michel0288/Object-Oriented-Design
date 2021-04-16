@@ -5,5 +5,24 @@
 {% include 'flash_messages.html' %}
 
 
-<h1>Hi {{current_user.first_name}} {{current_user.last_name}}! Welcome to Mama B's Wholesale!</h1>
+<h1 style="color: white; text-align:center;">Hi {{current_user.first_name}} {{current_user.last_name}}! Welcome to Mama B's Wholesale!</h1>
+<div class="d-flex justify-content-center">
+    <div class="" style="height: 800px; width:800px; ">
+        <img class="h-100 rounded w-100" src="../static/Images/shop.png" alt="Logo">
+      </div>
+
+
+
+</div>
+<div class="d-flex justify-content-center">
+    <div>
+        {% if current_user.is_authenticated and current_user.role=="customer"%}
+        <h2 style="color: white;">Click here to view your reciept </h2>
+        <form action="{{url_for('get_pdf',invoice='Receipt')}}" target="_blank" method="POST">
+            <button class="btn btn-primary" style="padding: 8px 12px;"> INVOICE (PDF)</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+
 {% endblock %}

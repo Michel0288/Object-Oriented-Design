@@ -172,7 +172,6 @@ class Report:
             return response
         return render_template('pdf.html')
 
-
 class OrderManagement:
     @app.route("/updatecart/<code>", methods=["POST"])
     @requires_roles('customer')
@@ -374,8 +373,9 @@ def addtodb():
             # db.commit()
         
         # flash(Markup('Successfully registered, please click <a href="/get_pdf/Reciept" target="#" class="alert-link">here</a>'))
+        session.pop('Shoppingcart',None)
         flash('Order Submitted','success')
-        return redirect(url_for('menu'))
+        return redirect(url_for('home'))
     return redirect(url_for('menu'))
 
 @app.route('/view-complaints')
@@ -427,7 +427,8 @@ def manage():
     cur.execute(sql)
     orders=cur.fetchall()
     return render_template('manageord.html',orders=orders)
-    
+
+
 
 def connect_db():
     return psycopg2.connect(host="localhost",database="oodproject", user="oodproject", password="oodproject")

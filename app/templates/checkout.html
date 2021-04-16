@@ -3,7 +3,7 @@
 {% block main %}
     <h1 style="text-align:center; color: white;">WELCOME TO MAMA B'S WHOLESALE </h1>
 <h4 style="text-align:center; padding-bottom:20px; color: white;">Here is where you finalize your order and the checkout. Thanks for Shopping with us!</h4>
-    <h1>Checkout</h1>
+    <h1 style="color:white;">Checkout</h1>
     {% include 'flash_messages.html' %}
     <table class="table">
         <thead>
@@ -42,16 +42,13 @@
   
       </table>
       <div class="d-flex p-5">
-        <h2><a href="{{url_for('menu')}}" style="margin-right:20px;">Continue Shopping</a></h2>
-        <h2 style="margin-right:20px">Tax: <span style="color: #033d5f;"> ${{tax}}</span></h2>
-        <h2 style="margin-right:20px">Grand Subtotal: <span style="color: #033d5f;"> ${{grandsubtotal}}</span></h2>
-        <h2>Grand Total: <span style="color: #033d5f;"> ${{grandtotal}} </span> </h2>
+        <h2><a href="{{url_for('menu')}}" style="margin-right:20px; color:white;">Continue Shopping</a></h2>
+        <h2 style="margin-right:20px; color:white;">Tax: <span style="color:white;"> ${{tax}}</span></h2>
+        <h2 style="margin-right:20px; color:white;">Grand Subtotal: <span style="color:white;"> ${{grandsubtotal}}</span></h2>
+        <h2 style="color:white;">Grand Total: <span style="color:white;"> ${{grandtotal}} </span> </h2>
         <h2><a href="{{url_for('clearcart')}} " class="btn btn-danger" id="clearcartbutton">Clear Cart</a></h2>
-        <form action="{{url_for('addtodb')}}" method="POST" style="margin-right: 20px;">
+        <form action="{{url_for('addtodb')}}" method="POST" style="margin-right: 20px; color:white;">
         <button class="btn btn-primary" style="background-color: rgb(255, 187, 0); border: solid rgb(255, 187, 0);"> Check Out</button>
-        </form>
-        <form action="{{url_for('get_pdf',invoice='Receipt')}}" target="_blank" method="POST">
-          <button class="btn btn-primary" style="padding: 8px 12px;"> INVOICE (PDF)</button>
         </form>
       </div>
       

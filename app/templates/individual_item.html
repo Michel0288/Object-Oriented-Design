@@ -7,8 +7,8 @@
         <img class="card-img-top h-100 w-100" src="/uploads/{{invent.photo}}" alt="">
         <div class="card-body" id="cbody">
           <h3 class="card-title text-center" style="color: rgb(255, 187, 0);">{{invent.item_name|upper}}</h3>
-          <h5 class="SellingPrice">{{"Cost Price: " + "$" + invent.selling_price|string}}</h5>
-          <h5 class="CostPrice">{{"Selling Price: " + "$" + invent.cost_price|string}}</h5>
+          <h5 class="SellingPrice">{{"Selling Price: " + "$" + invent.selling_price|string}}</h5>
+          <h5 class="CostPrice">{{"Cost Price: " + "$" + invent.cost_price|string}}</h5>
           <h5 class="QuantityInstock">{{"Instock: " + invent.quantity_instock|string}}</h5>
           <h5 class="QuantitySold">{{"Sold: " + invent.quantity_sold|string}}</h5>
           <h5 class="Supplier">{{"Supplier: " + invent.supplier|string}}</h5>
